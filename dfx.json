@@ -1,0 +1,12 @@
+{
+  "canisters": {
+    "dacade_submission": {
+      "type": "custom",
+      "main": "src/index.ts",
+      "candid": "src/index.did",
+      "build": "npx azle dacade_submission",
+      "wasm": ".azle/dacade_submission/dacade_submission.wasm",
+      "gzip": true
+    }
+  }
+}

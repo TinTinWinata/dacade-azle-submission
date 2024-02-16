@@ -1,0 +1,9 @@
+service: () -> {
+    add: (principal, text) -> (variant {Ok:record {id:principal; userId:principal; "text":text}; Err:variant {UserDoesNotExists:principal; ListDoesNotExists:principal}});
+    delete: (principal, principal) -> (variant {Ok:vec record {id:principal; userId:principal; "text":text}; Err:variant {UserDoesNotExists:principal; ListDoesNotExists:principal}});
+    deleteAccount: (principal) -> (variant {Ok:text; Err:variant {UserDoesNotExists:principal; ListDoesNotExists:principal}});
+    get: (principal) -> (opt vec record {id:principal; userId:principal; "text":text}) query;
+    register: (text) -> (record {id:principal; name:text});
+    update: (principal, principal, text) -> (variant {Ok:record {id:principal; userId:principal; "text":text}; Err:variant {UserDoesNotExists:principal; ListDoesNotExists:principal}});
+    whoami: (principal) -> (variant {Ok:record {id:principal; name:text}; Err:variant {UserDoesNotExists:principal; ListDoesNotExists:principal}}) query;
+}
